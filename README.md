@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# A Star Wars Experience
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is built with React and Typescript utilizing the Star Wars API.
 
 ## Available Scripts
 
