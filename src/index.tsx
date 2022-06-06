@@ -1,19 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import Header from './components/Header';
+import Films from './components/Films';
+import Film from './components/Films/Film/';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+ReactDOM.render(
+  <BrowserRouter>
+  <Header />
+  <Routes>
+    <Route path={'/'}>
+      <Route index={true} element={<Films characters={[]} created={''} director={''} edited={''} episode_id={''} opening_crawl={''} producer={''} release_date={''} title={''} url={''} planets={[]} species={[]} starships={[]} vehicles={[]} />} />
+      <Route path={'films'}>
+        <Route index={true} element={<Films characters={[]} created={''} director={''} edited={''} episode_id={''} opening_crawl={''} producer={''} release_date={''} title={''} url={''} planets={[]} species={[]} starships={[]} vehicles={[]} />}></Route>
+        <Route path={':filmId'} element={<Film characters={[]} created={''} director={''} edited={''} episode_id={''} opening_crawl={''} producer={''} release_date={''} title={''} url={''} planets={[]} species={[]} starships={[]} vehicles={[]} />}></Route>
+      </Route>
+    </Route>
+  </Routes>
+</BrowserRouter>,
+  document.getElementById('root')
+);

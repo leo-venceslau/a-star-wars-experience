@@ -1,0 +1,47 @@
+.film-details {
+    max-width: 100%;
+    margin: 1rem;
+    text-align: center;
+}
+
+.opening-crawl-div {
+    width: 350px;
+    margin: 2rem auto auto auto;
+    text-align: center;
+    color: #ffe919;
+    text-transform: uppercase;
+    line-height: 35px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.opening-crawl{
+    animation-name: move;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: up;
+    animation-timing-function:linear;
+    margin-top:40%;
+ }
+ .opening-crawl:hover {
+    animation-play-state: paused;
+ }
+ @keyframes move {
+    0% {
+       transform:translateY(0);
+    }
+    100% {
+       transform:translateY(-130%);
+    }
+ }
+ 
+ .characters-div {
+     margin-top: 2rem;
+ }
+ 
+ .character-links-div {
+     display: flex;
+     flex-direction: row;
+     overflow-x: scroll;
+     margin-top: 2rem;
+ }
