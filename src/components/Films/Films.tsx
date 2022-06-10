@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 
 import type { IFilm } from '../../swapi';
 import Loading from '../Loading'
+import Film from './Film/Film';
 
 import './films.css'
 
 const filmPosters = [
-  {image: "https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"},
+  {image: "https://m.media-amazon.com/images/I/A1wnJQFI82L._AC_SY879_.jpg"},
   {image: "https://i.etsystatic.com/16821137/r/il/1602c9/1893141549/il_570xN.1893141549_1gbe.jpg"},
   {image: "https://m.media-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg"},
   {image: "https://cdn.shopify.com/s/files/1/1057/4964/products/Star-Wars-Episode-1-The-Phantom-Menace-Vintage-Movie-Poster-Original-Japanese-1-Panel-20x29.jpg?v=1643173296"},
@@ -29,12 +30,12 @@ const Films = (props: IFilm) => {
   const [seachTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchMovies = async () => {
       const movieList = await getFilms();
       setLoading(false);
       setMovies(movieList);
-      console.log(movieList)
     };
     fetchMovies()
   },[])
